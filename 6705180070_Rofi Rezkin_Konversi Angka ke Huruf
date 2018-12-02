@@ -1,0 +1,56 @@
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+using namespace std;
+void satuan (int x)
+{
+if (x==1) {cout<<" Satu ";}
+else if (x==2) {cout<<" Dua ";}
+else if (x==3) {cout<<" Tiga ";}
+else if (x==4) {cout<<" Empat ";}
+else if (x==5) {cout<<" Lima ";}
+else if (x==6) {cout<<" Enam ";}
+else if (x==7) {cout<<" Tujuh ";}
+else if (x==8) {cout<<" Delapan ";}
+else if (x==9) {cout<<" Sembilan ";}
+else if (x==10) {cout<<" Sepuluh ";}
+else if (x==11) {cout<<" Sebelas ";}
+}
+void konversi ( long y)
+
+{
+    if (y<=11) {
+        satuan(y);
+    }else if ((y>11) && (y<=19)){
+        konversi(y%10); cout<<"Belas ";
+    }else if ((y>=20)&&(y<=99)){
+        konversi(y/10); cout<<"Puluh "; konversi(y%10);
+    }else if ((y>=100)&&(y<=199)){
+        cout<<"Seratus "; konversi(y%100);
+    }else if ((y>=200)&&(y<=999)){
+        konversi(y/100); cout<<"Ratus "; konversi(y%100);
+    }else if ((y>=1000)&&(y<=1999)){
+        cout<<"Seribu "; konversi(y%1000);
+    }else if ((y>=2000)&&(y<=9999)){
+        konversi(y/1000); cout<<"Ribu "; konversi(y%1000);
+    }else if ((y>=10000)&&(y<=99999)){
+        konversi(y/1000); cout<<"Ribu "; konversi(y%1000);
+    }else if ((y>=100000)&&(y<=999999)){
+        konversi(y/1000); cout<<"Ribu "; konversi(y%1000);
+    }else if ((y>=1000000)&&(y<=999999999)){
+        konversi (y/1000000); cout<<"Juta "; konversi (y%1000000);
+    }else if (y>=1000000000){
+    cout<<"Maaf ! Angka Yang Anda Masukan terlalu banyak!\n\n";
+    }
+}
+int main()
+{
+long  nilai;
+cout<<" APLIKASI KONVERSI ANGKA KE HURUF\n";
+cout << endl ;
+cout << "angka 1 - 999.999.999" << endl ;
+cout << endl ;
+cout<<"\n\n Masukan Angka: ";cin>>nilai;
+cout<<"\n\n Hasil Konversi angka: ";
+konversi( nilai);
+}
